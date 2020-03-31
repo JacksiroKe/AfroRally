@@ -1,0 +1,810 @@
+//  0AD buildings
+material pers_struct_dds
+{
+	parent base
+	diffuseMap pers_struct.dds
+	normalMap pers_struct_norm.png
+	ambient 1.1 1.1 1.05
+	diffuse 0.75 0.75 0.7
+	specular 0.1 0.1 0.1 12
+	terrain_light_map true
+	bump_scale 1.3
+}
+
+material ptol_struct
+{
+	parent base
+	diffuseMap ptol_struct.jpg
+	normalMap ptol_struct_norm.jpg
+	specMap ptol_struct_spec.jpg
+	ambient 1.1 1.1 1.1
+	diffuse 0.75 0.75 0.75
+	specular 0.2 0.2 0.2 12
+	terrain_light_map true
+	bump_scale 1.3
+}
+
+material rome
+{
+	parent base
+	diffuseMap rome_struct_2.jpg
+	normalMap rome_struct_2_norm.jpg
+	ambient 1.1 1.1 1.1
+	diffuse 0.75 0.75 0.75
+	specular 0.2 0.2 0.2 12
+	terrain_light_map true
+	bump_scale 1.3
+}
+material rome2
+{
+	parent base
+	diffuseMap rome_struct_1.jpg
+	normalMap rome_struct_1_norm.jpg
+	ambient 1.1 1.1 1.1
+	diffuse 0.75 0.75 0.75
+	specular 0.2 0.2 0.2 12
+	terrain_light_map true
+	bump_scale 1.3
+}
+
+material kart
+{
+	parent base
+	diffuseMap kart_struct.png
+	normalMap kart_struct_norm.jpg
+	ambient 1.1 1.1 1.1
+	diffuse 0.9 0.9 0.9
+	specular 0.3 0.3 0.3 12
+	terrain_light_map true
+}
+
+//  0AD obj
+material pyramid_small
+{
+	parent base
+	diffuseMap pyramid_small.dds
+	normalMap pyramid_small_norm.png
+	ambient 0.9 0.8 0.5
+	diffuse 0.6 0.6 0.4
+	specular 0.05 0.05 0.05 24
+	terrain_light_map true
+}
+material pyramid_big
+{
+	parent base
+	diffuseMap pyramid_big.dds
+	normalMap pyramid_big_norm.png
+	ambient 0.9 0.9 0.6
+	diffuse 0.6 0.6 0.5
+	specular 0.1 0.1 0.1 32
+	terrain_light_map true
+}
+
+material obelisk
+{
+	parent base
+	diffuseMap obelisk.png
+	normalMap obelisk_norm.png
+	ambient 1.0 0.92 0.7
+	diffuse 1.0 0.92 0.7
+	specular 0.2 0.2 0.2 8
+	terrain_light_map true
+}
+
+//  black
+material pyramid_small_black
+{
+	parent base
+	diffuseMap pyramid_small.dds
+	normalMap pyramid_small_norm.png
+	ambient 0.3 0.34 0.4
+	diffuse 0.2 0.24 0.3
+	specular 0.05 0.05 0.07 24
+	terrain_light_map true
+	bump_scale 1.5
+}
+material pyramid_big_black
+{
+	parent base
+	diffuseMap pyramid_big.dds
+	normalMap pyramid_big_norm.png
+	ambient 0.3 0.34 0.4
+	diffuse 0.1 0.14 0.2
+	specular 0.05 0.05 0.07 24
+	terrain_light_map true
+	bump_scale 1.5
+}
+
+//---------------------------------------------------
+
+material Temple
+{
+	parent base
+	diffuseMap pyramid_big.dds
+	normalMap pyramid_big_norm.png
+	ambient 0.53 0.65 0.49
+	diffuse 0.35 0.46 0.31
+	specular 0.14 0.18 0.13 32
+	terrain_light_map true
+	bump_scale 1.0
+}
+
+material DishHole
+{
+	parent base
+	diffuseMap pyramid_big.dds
+	normalMap pyramid_big_norm.png
+	ambient 1 1 1
+	diffuse 0.8 0.8 0.8
+	specular 0.4 0.4 0.4 16
+	bump_scale 0.6
+}
+
+material watchtower
+{
+	parent base
+	diffuseMap watchtower.jpg
+	normalMap watchtower_norm.jpg
+	ambient 1 1 1
+	diffuse 0.8 0.8 0.8
+	specular 0.5 0.5 0.45 16
+}
+material watchtower2
+{
+	parent base
+	diffuseMap watchtower2.jpg
+	ambient 1 1 1
+	diffuse 0.8 0.8 0.8
+	specular 0.1 0.1 0.1 8
+}
+
+material gate_01
+{
+	parent base
+	diffuseMap gate_01.jpg
+	normalMap gate_01_norm.jpg
+	ambient 1 1 1
+	diffuse 0.8 0.8 0.8
+	specular 0.1 0.1 0.1 8
+	bump_scale 3.3
+}
+
+material gas_tank
+{
+	parent base
+	diffuseMap gas_tank.jpg
+	normalMap gas_tank_norm.jpg
+	ambient 0.90 0.90 0.95
+	diffuse 0.70 0.70 0.75
+	specular 0.3 0.3 0.32 32
+	terrain_light_map true
+}
+
+
+//  house
+material house
+{
+	parent base
+	ambient 0.9 0.9 0.9
+	diffuse 0.8 0.8 0.8
+	specular 0.3 0.3 0.3 64
+	terrain_light_map true
+}
+material house_1_4
+{
+	parent house
+	diffuseMap house_1.jpg
+	normalMap house_1_norm.jpg
+}
+material house_2_4
+{
+	parent house
+	diffuseMap house_2.jpg
+	normalMap house_2_norm.jpg
+}
+material house_3_4
+{
+	parent house
+	diffuseMap house_3.jpg
+	normalMap house_3_norm.jpg
+}
+material house_4_4
+{
+	parent house
+	diffuseMap house_4.jpg
+	normalMap house_4_norm.jpg
+}
+
+material well
+{
+	parent base
+	diffuseMap well.jpg
+	normalMap well_norm.jpg
+	ambient 1.2 1.2 1.2
+	diffuse 0.7 0.7 0.7
+	specular 0.2 0.2 0.2 32
+	terrain_light_map true
+	shadowBias 0.0001
+}
+
+
+//  city
+material city_house1
+{
+	parent base
+	diffuseMap city_house1.jpg
+	normalMap city_house1_n.jpg
+	ambient 1.1 1.1 1.1
+	diffuse 1.1 1.1 1.1
+	specular 0.2 0.2 0.2 16
+}
+material city_house2
+{
+	parent base
+	diffuseMap city_house2.jpg
+	normalMap city_house2_n.jpg
+	ambient 1.2 1.2 1.2
+	diffuse 1.2 1.2 1.2
+	specular 0.2 0.2 0.2 16
+}
+material city_house3
+{
+	parent base
+	diffuseMap city_house3.jpg
+	ambient 1.0 1.0 1.0
+	diffuse 0.9 0.9 0.9
+	specular 0.2 0.2 0.2 16
+}
+material city_house4
+{
+	parent base
+	diffuseMap city_house4.jpg
+	ambient 1.0 1.0 1.0
+	diffuse 0.9 0.9 0.9
+	specular 0.2 0.2 0.2 16
+}
+material city_shop
+{
+	parent base
+	diffuseMap city_shop.jpg
+	ambient 1.1 1.1 1.1
+	diffuse 1.1 1.1 1.1
+	specular 0.2 0.2 0.2 16
+}
+
+material Building
+{
+	parent base
+	diffuseMap skyscraper.jpg
+	normalMap skyscraper_norm.jpg
+	specMap skyscraper_spec.jpg
+	reflMap skyscraper_refl.jpg
+	ambient 0.8 0.8 0.8
+	diffuse 0.9 0.9 0.9
+	specular 0.4 0.4 0.4 32
+	env_map true
+	fresnel false
+	refl_amount 0.3
+}
+
+
+//  big
+material water_plane_big
+{
+	parent base
+	diffuseMap water_plane_big.jpg
+	ambient 1.0 1.1 1.1
+	diffuse 1.0 1.04 1.05
+	specular 0.4 0.5 0.6 32
+	shadowBias 0.0001
+}
+
+material balloon1
+{
+	parent base
+	diffuseMap balloon1.jpg
+	ambient 0.7 0.7 0.7
+	diffuse 0.8 0.8 0.8
+	specular 0.3 0.3 0.3 20
+}
+material balloon1b
+{
+	parent balloon1
+	diffuseMap balloon1b.jpg
+}
+material balloon2
+{
+	parent base
+	diffuseMap balloon2.png
+	ambient 0.8 0.8 0.8
+	diffuse 0.9 0.9 0.9
+	specular 0.2 0.2 0.2 16
+}
+material balloon2b
+{
+	parent balloon2
+	diffuseMap balloon2b.png
+}
+material balloon2cl
+{
+	parent balloon2
+	diffuseMap balloon2cl.png
+}
+material balloon2clr
+{
+	parent balloon2
+	diffuseMap balloon2clr.png
+}
+
+
+material Buddha_Statue
+{
+	parent base
+	diffuseMap statue_buddha.jpg
+	normalMap statue_buddha_norm.jpg
+	specMap statue_buddha_spec.jpg
+	ambient 0.8 0.8 0.8
+	diffuse 0.9 0.9 0.9
+	specular 1.0 1.0 1.0 8
+}
+
+material chapel
+{
+	parent base
+	diffuseMap chapel.jpg
+	normalMap chapel_norm.jpg
+	ambient 1.0 1.0 1.0
+	diffuse 0.9 0.9 0.9
+	specular 0.1 0.1 0.1 32
+}
+material statue_angel
+{
+	parent base
+	diffuseMap statue_angel.jpg
+	ambient 1.0 0.98 1.0
+	diffuse 0.9 0.88 0.9
+	specular 0.12 0.12 0.12 6
+}
+material statue_woman
+{
+	parent base
+	diffuseMap statue_woman.jpg
+	ambient 1.0 1.0 1.0
+	diffuse 0.7 0.7 0.7
+	specular 0.1 0.1 0.1 24
+}
+
+
+material tree_trunks
+{
+	parent base
+	diffuseMap tree_trunks.jpg
+	normalMap tree_trunks_norm.jpg
+	ambient 0.8 0.8 0.8
+	diffuse 0.9 0.9 0.9
+	specular 0.1 0.1 0.1 32
+}
+
+material container_big
+{
+	parent base
+	diffuseMap container_big.jpg
+	normalMap container_big_norm.jpg
+	ambient 1.0 1.0 1.0
+	diffuse 1.0 1.0 1.0
+	specular 0.7 0.7 0.7 20
+	env_map true
+	fresnel false
+	refl_amount 0.05
+}
+
+material windmill
+{
+	parent base
+	diffuseMap windmill.jpg
+	normalMap windmill_norm.jpg
+	specMap windmill_spec.png
+	ambient 0.9 0.9 0.9
+	diffuse 1.5 1.5 1.5
+	specular 1.5 1.5 1.5 8
+}
+material windmill_fan
+{
+	parent base
+	diffuseMap windmill_fan.jpg
+	normalMap windmill_fan_norm.jpg
+	ambient 0.9 0.9 0.9
+	diffuse 1.4 1.4 1.4
+	specular 0.4 0.4 0.4 16
+}
+
+
+material rock_n2_alien
+{
+	parent base
+	diffuseMap rock_L2.jpg
+	normalMap rock_n2_norm.png
+	terrain_light_map true
+	ambient 1.0 1.0 1.0
+	diffuse 0.7 0.7 0.8
+	//specular 0.5 0.5 1.0 32
+}
+
+material rock_n5_alien
+{
+	parent base
+	diffuseMap rock_n5_alien.jpg
+	normalMap rock_n5_norm.png
+	terrain_light_map true
+	ambient 1.0 1.0 1.0
+	diffuse 0.7 0.7 0.8
+	//specular 0.5 0.5 1.0 32
+}
+
+
+//  alien contructions  -----------------------------
+material metal_01
+{
+	parent base
+	diffuseMap metal_01.jpg
+	normalMap metal_01_norm.jpg
+	specMap metal_01_spec.jpg
+	reflMap metal_01_spec.jpg
+	specMap_rgb true
+	ambient 1.0 1.0 1.0
+	diffuse 0.7 0.7 0.7
+	specular 0.6 0.6 0.6 20
+	env_map true
+	fresnel false
+	refl_amount 0.05
+}
+
+material metal_02
+{
+	parent base
+	diffuseMap metal_02.jpg
+	normalMap metal_02_norm.jpg
+	specMap metal_02_spec.jpg
+	reflMap metal_02_spec.jpg
+	specMap_rgb true
+	ambient 1.0 1.0 1.0
+	diffuse 0.7 0.7 0.7
+	specular 0.8 0.8 0.8 16
+	env_map true
+	fresnel false
+	refl_amount 0.05
+}
+
+material metal_02_dark
+{
+	parent base
+	diffuseMap metal_02_dark.jpg
+	normalMap metal_02_norm.jpg
+	specMap metal_02_spec.jpg
+	specMap_rgb true
+	ambient 1.0 1.0 1.0
+	diffuse 0.7 0.7 0.7
+	specular 0.7 0.7 0.7 32
+	env_map true
+	fresnel false
+	refl_amount 0.01
+}
+
+material metal_03_green
+{
+	parent base
+	diffuseMap metal_03_green.jpg
+	normalMap metal_03_norm.jpg
+	specMap metal_03_green_spec.jpg
+	specMap_rgb true
+	ambient 1.0 1.0 1.0
+	diffuse 0.7 0.7 0.7
+	specular 0.5 0.5 0.5 24
+}
+
+material metal_03_red
+{
+	parent base
+	diffuseMap metal_03_red.jpg
+	normalMap metal_03_norm.jpg
+	specMap metal_03_red_spec.jpg
+	specMap_rgb true
+	ambient 1.0 1.0 1.0
+	diffuse 0.7 0.7 0.7
+	specular 0.8 0.8 0.8 32
+}
+
+material metal_04
+{
+	parent base
+	diffuseMap metal_04.jpg
+	normalMap metal_04_norm.jpg
+	specMap metal_04_spec.jpg
+	specMap_rgb true
+	ambient 1.0 1.0 1.0
+	diffuse 0.7 0.7 0.7
+	specular 1 1 1 12
+}
+
+material metal_05
+{
+	parent base
+	diffuseMap metal_05.jpg
+	normalMap metal_05_norm.jpg
+	specMap metal_05_spec.jpg
+	specMap_rgb true
+	ambient 1.0 1.0 1.0
+	diffuse 0.7 0.7 0.7
+	specular 1 1 1 16
+}
+
+material metal_06
+{
+	parent base
+	diffuseMap metal_06.jpg
+	normalMap metal_06_norm.jpg
+	specMap metal_06_spec.jpg
+	reflMap metal_06.jpg
+	specMap_rgb true
+	ambient 1.0 1.0 1.0
+	diffuse 0.7 0.7 0.7
+	specular 1 1 1 12
+	env_map true
+	fresnel false
+	refl_amount 0.05
+}
+
+material metal_07
+{
+	parent base
+	diffuseMap metal_07.jpg
+	normalMap metal_07_norm.jpg
+	specMap metal_07_spec.jpg
+	specMap_rgb true
+	ambient 1.0 1.0 1.0
+	diffuse 0.7 0.7 0.7
+	specular 1 1 1 24
+}
+
+material metal_08
+{
+	parent base
+	diffuseMap metal_08.jpg
+	normalMap metal_08_norm.png
+	specMap metal_08_spec.jpg
+	specMap_rgb true
+	ambient 1.0 1.0 1.0
+	diffuse 0.7 0.7 0.7
+	specular 1 1 1 20
+}
+
+material metal_details
+{
+	parent base
+	diffuseMap metal_details.png
+	normalMap metal_details_norm.jpg
+	specMap metal_details_spec.jpg
+	specMap_rgb true
+	ambient 1.0 1.0 1.0
+	diffuse 0.7 0.7 0.7
+	specular 1 1 1 16
+}
+
+
+//  signs  ------------------------------------------
+material sign
+{
+	parent base
+	diffuseMap signs.jpg
+	normalMap metal_01_norm.jpg
+	specMap metal_01_spec.jpg
+	specMap_rgb true
+	ambient 1.0 1.0 1.0
+	diffuse 0.7 0.7 0.7
+	specular 0.4 0.4 0.4 20
+	env_map true
+	fresnel false
+	refl_amount 0.05
+}
+
+material sign_post
+{
+	parent base
+	diffuseMap sign_back.jpg
+	normalMap metal_01_norm.jpg
+	specMap metal_01_spec.jpg
+	specMap_rgb true
+	ambient 1.0 1.0 1.0
+	diffuse 0.7 0.7 0.7
+	specular 0.4 0.4 0.4 20
+	env_map true
+	fresnel false
+	refl_amount 0.05
+}
+
+//  structure*
+material structure
+{
+	parent base
+	diffuseMap metal_01.jpg
+	normalMap metal_01_norm.jpg
+	specMap metal_01_spec.jpg
+	reflMap metal_01_spec.jpg
+	specMap_rgb true
+	ambient 1.0 1.0 1.1
+	diffuse 0.7 0.7 0.8
+	specular 0.5 0.5 0.7 12
+	env_map true
+	fresnel false
+	refl_amount 0.05
+}
+
+//  ring*
+material ring_blue
+{
+	parent base
+	diffuseMap metal_01_light.jpg
+	normalMap metal_01_norm.jpg
+	specMap metal_01_spec.jpg
+	reflMap metal_01_spec.jpg
+	specMap_rgb true
+	ambient 0.5 1.0 1.6
+	diffuse 0.4 0.7 0.9
+	specular 0.3 0.3 0.4 6
+	env_map true
+	fresnel false
+	refl_amount 0.05
+}
+material ring_blue_stick
+{
+	parent ring_blue
+	diffuseMap metal_02_light.jpg
+	normalMap metal_02_norm.jpg
+	specMap metal_02_spec.jpg
+	reflMap metal_02_spec.jpg
+}
+
+material ring_red
+{
+	parent base
+	diffuseMap metal_01.jpg
+	normalMap metal_01_norm.jpg
+	specMap metal_01_spec.jpg
+	reflMap metal_01_spec.jpg
+	specMap_rgb true
+	ambient 2 1.0 0.8
+	diffuse 1.4 0.6 0.5
+	specular 0.5 0.3 0.3 6
+	env_map true
+	fresnel false
+	refl_amount 0.05
+}
+material ring_red_stick
+{
+	parent ring_red
+	diffuseMap metal_02.jpg
+	normalMap metal_02_norm.jpg
+	specMap metal_02_spec.jpg
+	reflMap metal_02_spec.jpg
+}
+
+material ring_lime
+{
+	parent base
+	diffuseMap metal_01.jpg
+	normalMap metal_01_norm.jpg
+	specMap metal_01_spec.jpg
+	reflMap metal_01_spec.jpg
+	specMap_rgb true
+	ambient 0.9 1.5 0.2
+	diffuse 0.9 1 0.1
+	specular 0.27 0.5 0.1 6
+	env_map true
+	fresnel false
+	refl_amount 0.05
+}
+material ring_lime_stick
+{
+	parent ring_lime
+	diffuseMap metal_02.jpg
+	normalMap metal_02_norm.jpg
+	specMap metal_02_spec.jpg
+	reflMap metal_02_spec.jpg
+}
+
+
+//  metal
+material metal_12
+{
+	parent base
+	diffuseMap metal_12.jpg
+	normalMap metal_12_norm.jpg
+	specMap metal_12_spec.jpg
+	specMap_rgb true
+	ambient 1.0 1.0 1.0
+	diffuse 0.7 0.7 0.7
+	specular 1 1 1 20
+}
+
+material metal_mixed_01
+{
+	parent base
+	diffuseMap metal_mixed_01.jpg
+	normalMap metal_mixed_01_norm.jpg
+	specMap metal_mixed_01_spec.jpg
+	specMap_rgb true
+	ambient 1.0 1.0 1.0
+	diffuse 0.7 0.7 0.7
+	specular 1 1 1 16
+}
+
+material metal_mixed_02
+{
+	parent base
+	diffuseMap metal_mixed_02.jpg
+	normalMap metal_mixed_02_norm.jpg
+	specMap metal_mixed_02_spec.jpg
+	specMap_rgb true
+	ambient 1.0 1.0 1.0
+	diffuse 0.7 0.7 0.7
+	specular 1 1 1 16
+}
+
+material metal_mixed_03
+{
+	parent base
+	diffuseMap metal_mixed_03.jpg
+	normalMap metal_mixed_03_norm.jpg
+	specMap metal_mixed_03_spec.jpg
+	specMap_rgb true
+	ambient 1.0 1.0 1.0
+	diffuse 0.7 0.7 0.7
+	specular 1 1 1 16
+}
+
+material metal_mixed_04
+{
+	parent base
+	diffuseMap metal_mixed_04.jpg
+	normalMap metal_mixed_04_norm.jpg
+	specMap metal_mixed_04_spec.jpg
+	specMap_rgb true
+	ambient 1.0 1.0 1.0
+	diffuse 0.7 0.7 0.7
+	specular 1 1 1 16
+}
+
+material metal_mixed_05
+{
+	parent base
+	diffuseMap metal_mixed_05.jpg
+	normalMap metal_mixed_05_norm.jpg
+	specMap metal_mixed_05_spec.jpg
+	specMap_rgb true
+	ambient 1.0 1.0 1.0
+	diffuse 0.7 0.7 0.7
+	specular 1 1 1 16
+}
+
+//  crystal
+material DishHoleCrystal
+{
+	parent base
+	diffuseMap dish_crystal.jpg
+	normalMap dish_crystal_norm.jpg
+	ambient 1 1 1
+	diffuse 0.8 0.8 0.8
+	specular 0.6 0.6 0.6 24
+	bump_scale 0.6
+}
+
+material ObeliskCrystal
+{
+	parent base
+	diffuseMap obelisk_crystal.png
+	normalMap obelisk_crystal_norm.jpg
+	ambient 1 1 1
+	diffuse 0.8 0.8 0.8
+	specular 0.6 0.6 0.6 24
+	bump_scale 0.6
+}

@@ -1,0 +1,279 @@
+vertex_program rnd_vs_hlsl hlsl
+{
+	source rnd.hlsl
+	target vs_2_0
+	entry_point rnd_vs
+ 
+	default_params
+	{
+		param_named_auto wvpMat worldviewproj_matrix
+	}
+}
+fragment_program rnd_ps_hlsl hlsl
+{
+	source rnd.hlsl
+	target ps_2_0
+	entry_point rnd_ps
+}
+fragment_program rnd_inv_ps_hlsl hlsl
+{
+	source rnd.hlsl
+	target ps_2_0
+	entry_point rnd_inv_ps
+}
+fragment_program rnd_add_ps_hlsl hlsl
+{
+	source rnd.hlsl
+	target ps_2_0
+	entry_point rnd_add_ps
+}
+
+
+
+
+vertex_program rnd_vs_glsl glsl
+{
+	source rnd_vertex.glsl
+	default_params
+	{
+		param_named_auto wvpMat worldviewproj_matrix
+	}
+}
+fragment_program rnd_ps_glsl glsl
+{
+	source rnd_fragment.glsl
+}
+fragment_program rnd_inv_ps_glsl glsl
+{
+	source rnd_inv_fragment.glsl
+}
+fragment_program rnd_add_ps_glsl glsl
+{
+	source rnd_add_fragment.glsl
+	default_params
+	{
+		param_named diffuseAdd int 0
+		param_named diffuseMap int 1
+	}
+}
+
+
+
+
+vertex_program rnd_vs unified
+{
+	delegate rnd_vs_glsl
+	delegate rnd_vs_hlsl
+}
+fragment_program rnd_ps unified
+{
+	delegate rnd_ps_glsl
+	delegate rnd_ps_hlsl
+}
+fragment_program rnd_inv_ps unified
+{
+	delegate rnd_inv_ps_glsl
+	delegate rnd_inv_ps_hlsl
+}
+fragment_program rnd_add_ps unified
+{
+	delegate rnd_add_ps_glsl
+	delegate rnd_add_ps_hlsl
+}
+
+
+
+
+//  game minimap   -------------
+material road_minimap_inv
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			depth_check off
+			depth_write off
+			scene_blend alpha_blend
+			cull_hardware none
+
+			vertex_program_ref rnd_vs  {  }
+			fragment_program_ref rnd_ps  {  }
+			
+			texture_unit diffuseMap
+			{
+				texture grassDensity.png
+			}
+		}
+	}
+}
+
+//  game minimap circle  -------------
+//
+vertex_program circle_vs_hlsl hlsl
+{
+	source rnd.hlsl
+	target vs_2_0
+	entry_point circle_vs
+ 
+	default_params
+	{
+		param_named_auto wvpMat worldviewproj_matrix
+	}
+}
+fragment_program circle_ps_hlsl hlsl
+{
+	source rnd.hlsl
+	target ps_2_0 
+	entry_point circle_ps
+
+	default_params
+	{
+		param_named showTerrain float 0.0
+	}
+}
+
+vertex_program circle_vs_glsl glsl
+{
+	source circle_vertex.glsl
+	default_params
+	{
+		param_named_auto wvpMat worldviewproj_matrix
+	}
+}
+fragment_program circle_ps_glsl glsl
+{
+	source circle_fragment.glsl
+	default_params
+	{
+		param_named showTerrain float 0.0
+		param_named roadMap int 0
+		param_named circleMap int 1
+		param_named terMap int 2
+	}
+}
+
+
+
+vertex_program circle_vs unified
+{
+	delegate circle_vs_glsl
+	delegate circle_vs_hlsl
+}
+fragment_program circle_ps unified
+{
+	delegate circle_ps_glsl
+	delegate circle_ps_hlsl
+}
+
+
+material circle_minimap
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			depth_check off
+			depth_write off
+			scene_blend alpha_blend
+			cull_hardware none
+
+			vertex_program_ref circle_vs  {  }
+			fragment_program_ref circle_ps  {  }
+			
+			texture_unit roadMap  // road
+			{
+				tex_address_mode clamp
+				texture alpha.png
+			}
+			texture_unit circleMap
+			{
+				tex_address_mode border
+				tex_border_colour 0 0 0 0
+				texture circleMini.png
+			}
+			texture_unit terMap
+			{
+				tex_address_mode mirror
+				texture alpha.png
+			}
+		}
+	}
+}
+
+//  graph  ---------------------------------
+material graphB
+{
+	technique
+	{
+		pass
+		{
+			ambient 0 0 0
+			diffuse 0 0 0
+			specular 0 0 0 1
+			//lighting off
+			depth_check off
+			depth_write off
+			//scene_blend alpha_blend
+			cull_hardware none
+		}
+	}
+}
+material graph1 : graphB {  technique  {  pass  {  emissive 0.0 1.0 1.0  }  }  }
+material graph2 : graphB {  technique  {  pass  {  emissive 0.0 1.0 0.0  }  }  }
+material graph3 : graphB {  technique  {  pass  {  emissive 1.0 1.0 0.0  }  }  }
+material graph4 : graphB {  technique  {  pass  {  emissive 1.0 0.5 0.0  }  }  }
+material graph5 : graphB {  technique  {  pass  {  emissive 1.0 0.0 0.0  }  }  }
+
+material graphA0 : graphB {  technique  {  pass  {  emissive 0.9 1.0 1.0  }  }  }
+material graphA1 : graphB {  technique  {  pass  {  emissive 0.8 1.0 1.0  }  }  }
+material graphA2 : graphB {  technique  {  pass  {  emissive 0.6 1.0 1.0  }  }  }
+material graphA3 : graphB {  technique  {  pass  {  emissive 0.4 1.0 1.0  }  }  }
+material graphA4 : graphB {  technique  {  pass  {  emissive 0.2 0.8 1.0  }  }  }
+material graphA5 : graphB {  technique  {  pass  {  emissive 0.2 0.6 1.0  }  }  }
+material graphA6 : graphB {  technique  {  pass  {  emissive 0.2 0.4 1.0  }  }  }
+material graphA7 : graphB {  technique  {  pass  {  emissive 0.2 0.2 1.0  }  }  }
+
+material graphB0 : graphB {  technique  {  pass  {  emissive 1.0 1.0 0.9  }  }  }
+material graphB1 : graphB {  technique  {  pass  {  emissive 1.0 1.0 0.6  }  }  }
+material graphB2 : graphB {  technique  {  pass  {  emissive 1.0 1.0 0.3  }  }  }
+material graphB3 : graphB {  technique  {  pass  {  emissive 1.0 1.0 0.0  }  }  }
+material graphB4 : graphB {  technique  {  pass  {  emissive 1.0 0.8 0.0  }  }  }
+material graphB5 : graphB {  technique  {  pass  {  emissive 1.0 0.6 0.0  }  }  }
+material graphB6 : graphB {  technique  {  pass  {  emissive 1.0 0.4 0.0  }  }  }
+material graphB7 : graphB {  technique  {  pass  {  emissive 1.0 0.2 0.0  }  }  }
+
+material graphBack
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			depth_check off
+			depth_write off
+			cull_hardware none
+
+			scene_blend alpha_blend
+			diffuse vertexcolour
+		}
+	}
+}
+
+material graphGrid
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			depth_check off
+			depth_write off
+			cull_hardware none
+
+			scene_blend alpha_blend
+			diffuse vertexcolour
+		}
+	}
+}

@@ -1,0 +1,32 @@
+#--  sr data
+data/ghosts/original
+data/tracks
+
+#--  build
+*build
+build*
+Debug*
+Release*
+bin
+
+CMakeLists.txt.user*
+
+#-- win bin
+*.dll
+*.pdb
+*.exe
+
+#-- vs crap
+*.ncb
+*.suo
+*.user
+
+*.lnk
+StuntRally*.*
+SR?Editor*.*
+
+#--  transl
+locale/translation*
+.tx
+*.pot
+sr.log

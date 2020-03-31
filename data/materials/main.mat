@@ -1,0 +1,188 @@
+material base
+{
+	ambient 1.0 1.0 1.0
+	diffuse 1.0 1.0 1.0 1.0
+	specular 0 0 0 32
+	emissive 0 0 0
+	//if env_map true, spec power gets mul by x4
+
+    scene_blend default
+    depth_write default
+    depth_bias default
+    alpha_rejection default
+	cull_hardware default
+    
+    lighting true
+    terrain_light_map false
+    terrain_light_map_toggleable false  // true only for cars
+    motionblur_mask true
+    receives_shadows true
+            
+    bump_scale 1
+    env_map false
+    fresnelScaleBiasPower 0.79 0.07 4
+    fresnel false
+    refl_amount 0.1  // only used when fresnel off
+    
+    //  extras1
+    tree_wind false
+    grass_wind false
+    vertex_colour false
+	soft_particles false
+            
+    transparent false  // for shadowcaster
+    mrt_output true
+    diffuse_address_mode wrap
+    fog_en true
+	instancing false
+
+	//  extras2
+    twoside_diffuse false
+    road_blend false
+	shadowBias 0
+    water_particles_lit false
+
+	//  car body only
+	glossiness 0.5
+	reflectiveness 1.0
+    fresnelScaleBiasPower2 0.79 0.07 4
+	specular2 0 0 0  32
+	//  glass only
+    specular_alpha false
+    env_alpha 0 0 0 0
+    //  use true for rgb only,  eg. if specMap is jpg,  uses [specular], 4th value for power
+    //    if false, has to be rgba (png) with rgb intensity and power in a
+    specMap_rgb false
+	
+	normalMap
+	reflMap
+	alphaMap
+	carPaintMap
+	specMap
+
+	pass
+	{
+		vertex_program main_vertex
+		fragment_program main_fragment
+
+		diffuse $diffuse
+		specular $specular
+		ambient $ambient
+		emissive $emissive
+			
+        scene_blend $scene_blend
+        alpha_rejection $alpha_rejection
+        depth_write $depth_write
+        depth_bias $depth_bias
+		cull_hardware $cull_hardware
+
+		shader_properties
+		{
+			normalMap $normalMap
+			reflMap $reflMap
+			alphaMap $alphaMap
+			carPaintMap $carPaintMap
+			specMap $specMap
+		
+		    env_map $env_map
+		    terrain_light_map $terrain_light_map
+		    terrain_light_map_toggleable $terrain_light_map_toggleable
+		    receives_shadows $receives_shadows
+		    motionblur_mask $motionblur_mask
+
+		    refl_amount $refl_amount
+		    lighting $lighting
+		    mrt_output $mrt_output
+		    soft_particles $soft_particles
+			fog_en $fog_en
+			instancing $instancing
+		    
+            tree_wind $tree_wind
+            grass_wind $grass_wind
+            vertex_colour $vertex_colour
+		    specular_alpha $specular_alpha
+
+            twoside_diffuse $twoside_diffuse
+            road_blend $road_blend
+            water_particles_lit $water_particles_lit
+            shadowBias $shadowBias
+		    
+		    fresnel $fresnel
+		    fresnelScaleBiasPower $fresnelScaleBiasPower
+		    bump_scale $bump_scale
+
+			glossiness $glossiness
+			reflectiveness $reflectiveness
+		    fresnelScaleBiasPower2 $fresnelScaleBiasPower2
+			specular2 $specular2
+			env_alpha $env_alpha
+			specMap_rgb $specMap_rgb
+		}
+
+		texture_unit diffuseMap
+		{
+			texture $diffuseMap
+			create_in_ffp true
+            tex_address_mode $diffuse_address_mode
+		}
+		
+		texture_unit sceneDepth
+		{
+		    texture_alias SceneDepth
+		}
+		
+		texture_unit carPaintMap
+		{
+		    texture $carPaintMap
+		}
+		
+		texture_unit alphaMap
+		{
+		    texture $alphaMap
+		}
+		
+		texture_unit normalMap
+		{
+		    texture $normalMap
+		}
+		
+		texture_unit envMap
+		{
+		    texture_alias CubeReflection
+		}
+		
+		texture_unit reflMap
+		{
+		    texture $reflMap
+		}
+		
+		texture_unit specMap
+		{
+		    texture $specMap
+		}
+		
+		texture_unit terrainLightMap
+		{
+		    texture_alias TerrainLightMap
+		}
+		
+		texture_unit shadowMap0
+        {
+            content_type shadow
+            tex_address_mode clamp
+            filtering none
+        }
+        texture_unit shadowMap1
+        {
+            content_type shadow
+            tex_address_mode clamp
+            filtering none
+        }
+        texture_unit shadowMap2
+        {
+            content_type shadow
+            tex_address_mode clamp
+            filtering none
+        }
+	}
+}

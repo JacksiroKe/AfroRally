@@ -1,0 +1,240 @@
+material grass
+{
+    parent base
+    alpha_rejection greater_equal 128
+    cull_hardware none
+    scene_blend alpha_blend
+    grass_wind true
+    vertex_colour true
+    terrain_light_map true
+    mrt_output false
+    diffuse 0.8 0.8 0.8
+    diffuse_address_mode clamp
+}
+
+//  old  -
+material grassAustralia
+{
+    parent grass
+    diffuseMap grassAustralia.png
+    ambient 1.4 1.5 1.4
+    diffuse 0.5 0.5 0.5
+}
+material grassDesert
+{
+    parent grass
+    diffuseMap grassDesert.png
+    ambient 1.4 1.5 1.4
+    diffuse 0.5 0.5 0.5
+}
+material grassForest
+{
+    parent grass
+    diffuseMap grassForest.png
+    ambient 1.4 1.5 1.4
+    diffuse 0.5 0.5 0.5
+}
+material grassJungle
+{
+    parent grass
+    diffuseMap grassJungle.png
+    ambient 1.4 1.5 1.4
+    diffuse 0.5 0.5 0.5
+}
+material grassGreece
+{
+    parent grass
+    diffuseMap grassGreece.png
+    ambient 1.0 1.0 1.0
+    diffuse 0.5 0.55 0.5
+}
+material grassSavanna
+{
+    parent grass
+    diffuseMap grassSavanna.png
+    ambient 1.35 1.35 1.3
+    diffuse 0.5 0.5 0.5
+}
+material grassWinter
+{
+    parent grass
+    diffuseMap grassWinter.png
+    alpha_rejection greater_equal 220
+    ambient 1.4 1.5 1.4
+    diffuse 0.5 0.5 0.5
+}
+material grassUnidentified
+{
+    parent grass
+    diffuseMap grassUnidentified.png
+    ambient 1.2 1.2 1.2
+    diffuse 0.4 0.4 0.4
+}
+
+//  new  +
+
+material grass2  {  parent grass
+    diffuseMap grass2.png  }
+
+material grass2g  {  parent grass
+    diffuseMap grass2g.png  }
+
+material grass3  {  parent grass
+    diffuseMap grass3.png  }
+
+material grass3g  {  parent grass
+    diffuseMap grass3g.png  }
+
+material grass3o  {  parent grass
+    diffuseMap grass3o.png  }
+
+material grass3y  {  parent grass
+    diffuseMap grass3y.png  }
+
+material grass3s  {  parent grass
+    diffuseMap grass3s.png  }
+
+material grass4v {  parent grass
+    diffuseMap grass4v.png  }
+
+material grass5  {  parent grass
+    diffuseMap grass5.png  }
+
+
+material grass6r  {  parent grass
+	diffuseMap grass6r.png  }
+
+material grass6s  {  parent grass
+    diffuseMap grass6s.png  }
+
+material grass7wg  {  parent grass
+    diffuseMap grass7wg.png  }
+
+material grass7wy  {  parent grass
+	diffuseMap grass7wy.png  }
+
+material grass8g  {  parent grass
+	diffuseMap grass8g.png  }
+
+material grass9r  {  parent grass
+    diffuseMap grass9r.png  }
+
+material grass10 {  parent grass
+    diffuseMap grass10.png  }
+
+material grass11w {  parent grass
+	diffuseMap grass11w.png  }
+
+material grass11wg {  parent grass
+    diffuseMap grass11wg.png  }
+
+
+material grass12o {  parent grass
+	diffuseMap grass12o.png  }
+
+material grass12w {  parent grass
+    diffuseMap grass12w.png  }
+
+material grass12s {  parent grass
+    diffuseMap grass12s.png  }
+
+material grass12y- {  parent grass
+    diffuseMap grass12y-.png  }
+
+material grass15 {  parent grass
+    diffuseMap grass15.png  }
+
+material grass15g {  parent grass
+    diffuseMap grass15g.png  }
+
+material grass15o {  parent grass
+    diffuseMap grass15o.png  }
+
+material grass16g {  parent grass
+    diffuseMap grass16g.png  }
+
+material grass16s {  parent grass
+    diffuseMap grass16s.png  }
+
+material grass16r {  parent grass
+    diffuseMap grass16r.png  }
+
+
+material grass17 {  parent grass
+    diffuseMap grass17.png  }
+
+material grass17r {  parent grass
+    diffuseMap grass17r.png  }
+
+material grass18gw {  parent grass
+    diffuseMap grass18gw.png  }
+
+material grass18w {  parent grass
+    diffuseMap grass18w.png  }
+
+material grass18s {  parent grass
+    diffuseMap grass18s.png  }
+
+material grass18wg {  parent grass
+	diffuseMap grass18wg.png  }
+
+material grass19 {  parent grass
+	diffuseMap grass19.png  }
+
+material grass20 {  parent grass
+	diffuseMap grass20.png  }
+
+material grass20p {  parent grass
+    diffuseMap grass20p.png  }
+
+material gplant1 {  parent grass
+    diffuseMap gplant1.png  }
+
+
+//  unidentified
+material grassXc {  parent grass
+    diffuseMap grassXc.png  }
+
+material grassXv {  parent grass
+    diffuseMap grassXv.png  }
+
+material grassX10b {  parent grass
+    diffuseMap grassX10b.png  }
+
+material grassX13p {  parent grass
+    diffuseMap grassX13p.png  }
+
+//  alien
+material grass4v-alien {  parent grass
+    diffuseMap grass4v-alien.png  }
+
+material grassX10b-alien {  parent grass
+    diffuseMap grassX10b-alien.png  }
+
+material grassXc-alien {  parent grass
+    diffuseMap grassXc-alien.png  }
+
+//  black desert
+material grassZ10 {  parent grass
+	emissive 0.3 0.3 0.3
+    diffuseMap grassZ10.png  }
+
+material grassZ11 {  parent grass
+	emissive 0.2 0.2 0.2
+    diffuseMap grassZ11.png  }
+
+material grassZ13p {  parent grass
+	emissive 0.2 0.2 0.2
+    diffuseMap grassZ13p.png  }
+
+material grassZ13r {  parent grass
+	emissive 0.2 0.2 0.2
+    diffuseMap grassZ13r.png  }
+
+material grassZ14r {  parent grass
+	emissive 0.2 0.2 0.2
+    diffuseMap grassZ14r.png  }
+
+material grassZ1r {  parent grass
+	emissive 0.2 0.2 0.2
+    diffuseMap grassZ1r.png  }

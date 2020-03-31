@@ -1,0 +1,131 @@
+
+vertex_program dof_vs_hlsl hlsl
+{
+    source dof.hlsl
+    target vs_2_0
+    entry_point dof_vs
+    default_params
+    {
+        param_named_auto wvp worldviewproj_matrix
+    }
+}
+
+fragment_program DoF_Gaussian3x3FP_hlsl hlsl
+{
+  source dof.hlsl
+  entry_point Gaussian3x3_ps
+	target ps_2_0
+
+}
+
+fragment_program DoF_DepthOfFieldFP_hlsl hlsl
+{
+  source dof.hlsl
+  entry_point DepthOfField_ps
+  target ps_3_0
+
+}
+
+
+vertex_program dof_vs_glsl glsl
+{
+    source dof_vertex.glsl
+    default_params
+    {
+        param_named_auto wvp worldviewproj_matrix
+    }
+}
+
+fragment_program DoF_Gaussian3x3FP_glsl glsl
+{
+  source dof_gaussian3x3.glsl
+}
+
+fragment_program DoF_DepthOfFieldFP_glsl glsl
+{
+  source dof_depthoffield.glsl
+    default_params
+  {
+	param_named sceneTex int 0
+	param_named depthTex int 1
+	param_named blurTex int 2
+  }
+}
+
+vertex_program dof_vs unified
+{
+	delegate dof_vs_glsl
+	delegate dof_vs_hlsl
+}
+
+fragment_program DoF_Gaussian3x3FP unified
+{
+	delegate DoF_Gaussian3x3FP_glsl
+	delegate DoF_Gaussian3x3FP_hlsl
+}
+
+fragment_program DoF_DepthOfFieldFP unified
+{
+	delegate DoF_DepthOfFieldFP_glsl
+	delegate DoF_DepthOfFieldFP_hlsl
+}
+
+material DoF_Gaussian3x3
+{
+  technique
+  {
+    pass
+    {
+      vertex_program_ref dof_vs
+      {
+      }
+	  fragment_program_ref DoF_Gaussian3x3FP
+      {
+      }
+
+      texture_unit sourceTex
+      {
+       texture white.png
+				 tex_address_mode clamp
+           filtering bilinear
+           }
+    }
+  }
+}
+
+material DoF_DepthOfField
+{
+  technique
+  {
+    pass
+    {
+      vertex_program_ref dof_vs
+      {
+      }
+      fragment_program_ref DoF_DepthOfFieldFP
+      {
+      }
+
+      texture_unit sceneTex
+      {
+       texture white.png
+				 tex_address_mode clamp
+           filtering bilinear
+           }
+
+      texture_unit depthTex
+      {
+        texture white.png
+				tex_address_mode clamp
+           filtering bilinear
+           }
+
+      texture_unit blurTex
+      {
+       texture white.png
+				 tex_address_mode clamp
+           filtering bilinear
+           }
+    }
+  }
+}

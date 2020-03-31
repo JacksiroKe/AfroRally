@@ -1,0 +1,73 @@
+vertex_program RenderGBuffer_vp_hlsl hlsl
+{
+    source renderscene.hlsl
+    target vs_2_0
+    entry_point RenderScene_vs
+    default_params
+    {
+        param_named_auto wvp worldviewproj_matrix
+    }
+}
+fragment_program RenderGBuffer_ps_hlsl hlsl
+{
+    source renderscene.hlsl
+    entry_point RenderScene_ps
+    target ps_2_0
+    default_params
+    {
+    }
+    
+}
+
+vertex_program RenderGBuffer_vp_glsl glsl
+{
+    source renderscene_vp.glsl
+    default_params
+    {
+        param_named_auto wvp worldviewproj_matrix
+    }
+}
+fragment_program RenderGBuffer_ps_glsl glsl
+{
+	source renderscene_fp.glsl
+    default_params
+    {
+    }
+}
+
+vertex_program RenderGBuffer_vp unified
+{
+	delegate RenderGBuffer_vp_glsl
+	delegate RenderGBuffer_vp_hlsl
+}
+fragment_program RenderGBuffer_ps unified
+{
+	delegate RenderGBuffer_ps_glsl
+	delegate RenderGBuffer_ps_hlsl
+}
+
+material RenderScene
+{
+	technique
+    {
+        pass
+        {
+			vertex_program_ref RenderGBuffer_vp
+			{
+			}
+        
+			fragment_program_ref RenderGBuffer_ps
+			{
+			}
+
+			texture_unit tex1
+			{
+				//scenebuffer
+				texture white.png
+				filtering bilinear
+			}
+		}
+	}
+}
+
+

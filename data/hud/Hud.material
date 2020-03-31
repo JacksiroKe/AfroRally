@@ -1,0 +1,100 @@
+//  gauge
+material hud/g
+{
+	receive_shadows off
+	technique
+	{
+		pass
+		{
+			lighting off
+			depth_check off
+			depth_write off
+			scene_blend alpha_blend
+			cull_hardware none
+		}
+	}
+}
+
+material hud/0 : hud/g {  technique  {  pass  {  texture_unit  {  texture gauges0.png  }  }  }  }
+material hud/1 : hud/g {  technique  {  pass  {  texture_unit  {  texture gauges1.png  }  }  }  }
+material hud/2 : hud/g {  technique  {  pass  {  texture_unit  {  texture gauges2.png  }  }  }  }
+material hud/3 : hud/g {  technique  {  pass  {  texture_unit  {  texture gauges3.png  }  }  }  }
+material hud/4 : hud/g {  technique  {  pass  {  texture_unit  {  texture gauges4.png  }  }  }  }
+material hud/5 : hud/g {  technique  {  pass  {  texture_unit  {  texture gauges5.png  }  }  }  }
+
+
+//  minimap
+material hud/Minimap
+{
+	receive_shadows off
+	technique
+	{
+		pass
+		{
+			lighting off
+			depth_check off
+			depth_write off
+			cull_hardware none
+		}
+	}
+}
+
+material hud/CarPos
+{
+	receive_shadows off
+	technique
+	{
+		pass
+		{
+			lighting off
+		//	depth_check off
+		//	depth_write off
+			scene_blend alpha_blend
+			diffuse vertexcolour
+			cull_hardware none
+			
+			texture_unit
+			{
+				texture carpos0.png
+			}
+		}
+	}
+}
+
+
+material hud/Times
+{
+	receive_shadows off
+	technique
+	{
+		pass
+		{
+			lighting off
+			depth_check off
+			scene_blend alpha_blend
+			cull_hardware none
+			
+			texture_unit tex1
+			{
+				texture border_rect.png
+			}
+		}
+	}
+}
+
+material hud/line
+{
+	receive_shadows off
+	technique
+	{
+		pass
+		{
+			lighting off
+			depth_check off
+			depth_write off
+			scene_blend alpha_blend
+			diffuse vertexcolour
+			cull_hardware none
+		}
+	}
+}

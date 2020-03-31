@@ -1,0 +1,174 @@
+vertex_program SoftParticlesBlend_vs_hlsl hlsl
+{
+    source softparticles.hlsl
+    target vs_2_0
+    entry_point SoftParticlesBlend_vs
+    default_params
+    {
+        param_named_auto wvp worldviewproj_matrix
+    }
+}
+fragment_program SoftParticlesBlend_ps_hlsl hlsl
+{
+    source softparticles.hlsl
+    entry_point SoftParticlesBlend_ps
+    target ps_2_0
+    default_params
+    {
+    }
+}
+fragment_program ShowDepth_ps_hlsl hlsl
+{
+    source softparticles.hlsl
+    entry_point ShowDepth_ps
+    target ps_2_0
+    default_params
+    {
+    }
+}
+
+
+
+vertex_program SoftParticlesBlend_vs_glsl glsl
+{
+    source softparticles_vertex.glsl
+    default_params
+    {
+        param_named_auto wvp worldviewproj_matrix
+    }
+}
+fragment_program SoftParticlesBlend_ps_glsl glsl
+{
+    source softparticles_blend.glsl
+    default_params
+    {
+    }
+}
+fragment_program ShowDepth_ps_glsl glsl
+{
+    source softparticles_showdepth.glsl
+}
+
+
+vertex_program SoftParticlesBlend_vs unified
+{
+	delegate SoftParticlesBlend_vs_glsl
+	delegate SoftParticlesBlend_vs_hlsl
+}
+fragment_program SoftParticlesBlend_ps unified
+{
+	delegate SoftParticlesBlend_ps_glsl
+	delegate SoftParticlesBlend_ps_hlsl
+}
+fragment_program ShowDepth_ps unified
+{
+    delegate ShowDepth_ps_glsl
+    delegate ShowDepth_ps_hlsl
+}
+
+
+material RenderScene
+{
+	technique
+    {
+        pass
+        {
+			vertex_program_ref Ogre/Compositor/StdQuad_vp
+			{
+			}
+        
+			fragment_program_ref Ogre/Compositor/StdQuad_fp
+			{
+			}
+
+			texture_unit tex1
+			{
+				//scenebuffer
+				texture white.png
+				filtering bilinear
+			}
+		}
+	}
+}
+material SceneRenderNoDepth
+{
+	technique
+    {
+        pass
+        {
+			depth_write off
+			vertex_program_ref SoftParticlesBlend_vs
+            {
+            }
+        
+		    fragment_program_ref SoftParticlesBlend_ps
+            {
+            }
+
+            texture_unit tex1
+            {
+				//previous scene
+                texture white.png
+                filtering bilinear
+            }
+		}
+	}
+}
+material SoftParticlesBlend
+{
+    technique
+    {
+        pass
+        {
+			vertex_program_ref SoftParticlesBlend_vs
+            {
+            }
+        
+		    fragment_program_ref SoftParticlesBlend_ps
+            {
+            }
+
+            texture_unit tex1
+            {
+				//previous scene
+                texture white.png
+                filtering bilinear
+            }
+
+            texture_unit tex2
+            {
+				// softparticle texture
+                 texture white.png
+                filtering bilinear
+            }
+			
+        }
+    }
+}
+
+material ShowDepth
+{
+    technique
+    {
+        pass
+        {
+			vertex_program_ref SoftParticlesBlend_vs
+            {
+            }
+        
+		    fragment_program_ref ShowDepth_ps
+            {
+			    param_named_auto far far_clip_distance
+            }
+
+            texture_unit tex1
+            {
+				//depth
+                texture white.png
+                filtering bilinear
+            }
+		
+			
+        }
+    }
+}

@@ -1,0 +1,24 @@
+fragment_program Ogre/Compositor/StdQuad_fp_hlsl hlsl
+{
+	source StdQuad_fp.hlsl
+	entry_point StdQuad_fp
+	target ps_2_0
+
+	default_params
+	{
+	}
+}
+
+
+fragment_program Ogre/Compositor/StdQuad_fp_glsl glsl
+{
+	source StdQuad_fp.glsl
+}
+
+
+
+fragment_program Ogre/Compositor/StdQuad_fp unified
+{
+	delegate Ogre/Compositor/StdQuad_fp_glsl
+	delegate Ogre/Compositor/StdQuad_fp_hlsl
+}
